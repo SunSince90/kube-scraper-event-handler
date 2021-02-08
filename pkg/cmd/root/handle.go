@@ -14,12 +14,6 @@
 
 package root
 
-type options struct {
-	redis *redisOptions
-	debug bool
-}
-
-type redisOptions struct {
-	address    string
-	pubChannel string
+func handleEvent(payload string) {
+	// TODO: handle the event here
 }
