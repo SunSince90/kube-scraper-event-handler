@@ -12,14 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package root
+package main
 
-type options struct {
-	redis *redisOptions
-	debug bool
-}
+import (
+	"fmt"
+	"os"
 
-type redisOptions struct {
-	address    string
-	pubChannel string
+	"github.com/SunSince90/kube-scraper-event-handler/pkg/cmd/root"
+)
+
+func main() {
+	cmd := root.NewRootCommand()
+
+	if err := cmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }
